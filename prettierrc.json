@@ -9,6 +9,14 @@
       "<THIRD_PARTY_MODULES>",
       "^../shared/helpers/env$",
       "^@tidio/(.*)$",
+      "^(actions|automation|bots|modules)/(.*)$",
+      "^(application)/(.*)$",
+      "^(cli)/(.*)$",
+      "^(conversation|entity|facades|common|shared|features|models|services|types)(.*)$",
+      "^(redis|infrastructure|server)/(.*)$",
+      "^(testUtils)/(.*)$",
+      "^(worker)/(.*)$",
+      "^(validators|zod)/(.*)$",
       "^(store|store/(.*))$",
       "^(utils|utils(.*))$",
       "^components/(.*)(?<!gif|png|jpg|jpeg|svg|mp4|webm)$",
@@ -18,17 +26,24 @@
       "^[./](.*?)(?<!gif|png|jpg|jpeg|svg|mp4|webm|less)$",
       "^[./](.*?).less$",
       "^[./](.*?).(gif|png|jpg|jpeg|svg|mp4|webm)$",
-      "^components/(.*).(gif|png|jpg|jpeg|svg|mp4|webm)$"
-    ],
+      "^components/(.*).(gif|png|jpg|jpeg|svg|mp4|webm)$",
+      "^(errors)/(.*)$"
+  ],
     "importOrderSeparation": true,
     "importOrderSortSpecifiers": true,
     "importOrderGroupNamespaceSpecifiers": true,
     "overrides": [
-        {
-            "files": "*.ts",
-            "options": {
-                "importOrderParserPlugins": ["typescript"]
-            }
-        }
-    ]
+      {
+          "files": "*.ts",
+          "options": {
+              "importOrderParserPlugins": ["typescript", "decorators-legacy"]
+          }
+      },
+      {
+          "files": "*.js",
+          "options": {
+              "importOrderParserPlugins": ["decorators-legacy"]
+          }
+      }
+  ]
 }
